@@ -16,6 +16,9 @@ namespace GestionEtudiant
         public string FullName { get; set; }
         public int Cin { get; set; }
         public Boolean Absent { get; set; }
+        public int nbAbssence { get; set; }
+        public int nbPresence { get; set; }
+
 
         public override string ToString()
         {

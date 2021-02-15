@@ -43,11 +43,13 @@ namespace GestionEtudiant
             return data;
         }
 
-        public void updateEtudiant(string FullName, bool absent, int cin)
+        public void updateEtudiant(string FullName, bool absent, int cin, int nbAbs, int nbPres)
         {
             var db = new SQLiteConnection(dbPath);
             var newEtudiant = new Etudiant();
             newEtudiant.Absent =  Convert.ToString(absent);
+            newEtudiant.NbAbsence = nbAbs;
+            newEtudiant.NbPresence = nbPres;
             string[] name = FullName.Split(" ");
             newEtudiant.Nom = name[0];
             newEtudiant.Prenom = name[1];
@@ -62,7 +64,7 @@ namespace GestionEtudiant
             var table = db.Table<Etudiant>();
             foreach (var s in table)
             {
-                data += s.Cin + " " + s.Nom + " " + s.Prenom + " " + s.Absent + "\n";
+                data += s.Cin + " " + s.Nom + " " + s.Prenom + " " + s.Absent + " " + s.NbPresence + " " + s.NbAbsence + "\n";
             }
             return data;
         }
