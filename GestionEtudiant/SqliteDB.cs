@@ -17,8 +17,20 @@ namespace GestionEtudiant
     {
         string dbPath = Path.Combine( System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Gestion.db3");
 
+        public SqliteDB()
+        {
+            //Creating database, if it doesn't already exist 
+            if (!File.Exists(dbPath))
+            {
+                var db = new SQLiteConnection(dbPath);
+                db.CreateTable<Etudiant>();
+                db.CreateTable<Filiere>();
+                db.CreateTable<Matiere>();
+                db.CreateTable<Professeur>();
+            }
+        }
 
-        [Table("Etudiant")]
+            [Table("Etudiant")]
         public class Etudiant
         {
             [PrimaryKey, AutoIncrement, Column("_id")]
