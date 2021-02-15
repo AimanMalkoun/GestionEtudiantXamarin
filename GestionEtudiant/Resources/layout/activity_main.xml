@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button_logout"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="12dp"
@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/logout_icon" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_search"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="16dp"
@@ -51,7 +51,7 @@
         app:srcCompat="@drawable/loup_icon" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_new_lesson"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="24dp"
@@ -73,7 +73,7 @@
         app:srcCompat="@drawable/lesson_icon" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_add_strudent"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="20dp"
@@ -107,7 +107,7 @@
         app:srcCompat="@drawable/home_icon" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_abssence"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="104dp"

@@ -30,7 +30,44 @@ namespace GestionEtudiant
             }
         }
 
-            [Table("Etudiant")]
+        public string SelectAllFiliere()
+        {
+            string data = "";
+            var db = new SQLiteConnection(dbPath);
+            Console.WriteLine("Reading data From Table");
+            var table = db.Table<Filiere>();
+            foreach (var s in table)
+            {
+                data += s.Id + " " + s.NomFiliere + "\n";
+            }
+            return data;
+        }
+
+        public void updateEtudiant(string FullName, bool absent, int cin)
+        {
+            var db = new SQLiteConnection(dbPath);
+            var newEtudiant = new Etudiant();
+            newEtudiant.Absent =  Convert.ToString(absent);
+            string[] name = FullName.Split(" ");
+            newEtudiant.Nom = name[0];
+            newEtudiant.Prenom = name[1];
+            newEtudiant.Cin = cin;
+            db.Update(newEtudiant);
+        }
+        public string SelectAllEtudiant()
+        {
+            string data = "";
+            var db = new SQLiteConnection(dbPath);
+            Console.WriteLine("Reading data From Table");
+            var table = db.Table<Etudiant>();
+            foreach (var s in table)
+            {
+                data += s.Cin + " " + s.Nom + " " + s.Prenom + " " + s.Absent + "\n";
+            }
+            return data;
+        }
+
+        [Table("Etudiant")]
         public class Etudiant
         {
             [PrimaryKey, AutoIncrement, Column("_id")]
