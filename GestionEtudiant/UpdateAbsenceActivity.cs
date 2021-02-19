@@ -37,7 +37,7 @@ namespace GestionEtudiant
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_update_absence);
 
-            ListView listViewEtudiant = FindViewById<ListView>(Resource.Id.list_view_etudiant);
+            ListView listViewEtudiant = FindViewById<ListView>(Resource.Id.list_view_students);
             listViewEtudiant.Adapter = new CustomListAdapterUpdateStudent(EtudiantData.etudiants);
 
 
@@ -59,7 +59,7 @@ namespace GestionEtudiant
 
 
 
-            Button buttonSave = FindViewById<Button>(Resource.Id.button_save);
+            Button buttonSave = FindViewById<Button>(Resource.Id.button8);
             buttonSave.Click += delegate
             {
                 SqliteDB sqliteDB = new SqliteDB();
@@ -67,14 +67,14 @@ namespace GestionEtudiant
                 {
                     sqliteDB.updateEtudiant(EtudiantData.etudiants[i].FullName, EtudiantData.etudiants[i].Absent, EtudiantData.etudiants[i].Cin, EtudiantData.etudiants[i].nbPresence, EtudiantData.etudiants[i].nbAbssence);
                 }
-                Intent mainActivity = new Intent(this, typeof(MainActivity));
+                Intent mainActivity = new Intent(this, typeof(HomeActivity));
                 StartActivity(mainActivity);
             };
 
-            Button buttonCancel = FindViewById<Button>(Resource.Id.button_cancel);
+            Button buttonCancel = FindViewById<Button>(Resource.Id.button6);
             buttonSave.Click += delegate
             {
-                Intent mainActivity = new Intent(this, typeof(MainActivity));
+                Intent mainActivity = new Intent(this, typeof(HomeActivity));
                 StartActivity(mainActivity);
             };
         }

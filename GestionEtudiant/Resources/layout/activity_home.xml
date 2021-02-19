@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button_logout"
+        android:id="@+id/button5"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="12dp"
@@ -29,7 +30,7 @@
         app:srcCompat="@drawable/logout_icon" />
 
     <Button
-        android:id="@+id/button_search"
+        android:id="@+id/button4"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="16dp"
@@ -51,7 +52,7 @@
         app:srcCompat="@drawable/loup_icon" />
 
     <Button
-        android:id="@+id/button_new_lesson"
+        android:id="@+id/button3"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="24dp"
@@ -73,10 +74,10 @@
         app:srcCompat="@drawable/lesson_icon" />
 
     <Button
-        android:id="@+id/button_add_strudent"
+        android:id="@+id/button2"
         android:layout_width="189dp"
         android:layout_height="65dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/add_student"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintHorizontal_bias="0.53"
@@ -107,7 +108,7 @@
         app:srcCompat="@drawable/home_icon" />
 
     <Button
-        android:id="@+id/button_abssence"
+        android:id="@+id/button"
         android:layout_width="189dp"
         android:layout_height="65dp"
         android:layout_marginTop="104dp"
@@ -127,4 +128,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/checkbox_icon" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
