@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50px">
+    <ImageView
+        android:src="@drawable/search_img"
+        android:layout_width="match_parent"
+        android:layout_height="188.5dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/imageView1"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/search_img" 
+        android:padding="20dp"/>
+    <TextView
+        android:text="@string/search_nom"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:padding="10dp"
+        android:gravity="center" />
+    <android.support.design.widget.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText1"
+        android:hint="@string/nom"
+        android:inputType="none|textPersonName"
+        android:padding="10dp"/>
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="10.0dp"
+        android:id="@+id/space2" />
+    <TextView
+        android:text="@string/search_fil"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:padding="10dp" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerfil"
+        android:dropDownWidth="wrap_content"
+        android:spinnerMode="dropdown"
+        android:padding="10dp"
+        android:accessibilityPaneTitle="@string/search_fil" />
+    <TextView
+        android:text="@string/search_mat"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:padding="10dp" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnermat"
+        android:spinnerMode="dropdown"
+        android:dropDownWidth="wrap_content"
+        android:padding="10dp" />
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="20.0dp"
+        android:id="@+id/space3" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:gravity="center">
+        <Button
+            android:text="@string/recherche"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@id/search_button"
+            android:background="@drawable/backgroundyellow"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold | italic"
+            android:textAllCaps="false"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/space5"
+            android:minWidth="100px" />
+        <Button
+            android:text="@string/annuler"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/cancel_button"
+            android:background="@drawable/backgroundyellow"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold | italic"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</LinearLayout>

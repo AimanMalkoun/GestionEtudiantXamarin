@@ -11,16 +11,21 @@ using System.Text;
 
 namespace GestionEtudiant
 {
-    class CustomListAdapterUpdateStudent : BaseAdapter<Etudiant>
+    class CustomListAdapterUpdateStudent : BaseAdapter<Etudiants>
     {
-        List<Etudiant> etudiants;
+        List<Etudiants> etudiants;
+       
+       
+        Interface1 listener;
 
-        public CustomListAdapterUpdateStudent(List<Etudiant> etudiants)
+
+        public CustomListAdapterUpdateStudent(List<Etudiants> etudiants)
         {
             this.etudiants = etudiants;
+
         }
 
-        public override Etudiant this[int position]
+        public override Etudiants this[int position]
         {
             get
             {
@@ -43,25 +48,43 @@ namespace GestionEtudiant
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
+            
             var view = convertView;
+            listener = parent.Context as Interface1;
 
             if (view == null)
             {
                 view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.item_absent_etudiant, parent, false);
 
-                var checkBoxEtudiant = view.FindViewById<CheckBox>(Resource.Id.checkboxetudant);
+                 var checkBoxEtudiant = view.FindViewById<CheckBox>(Resource.Id.checkboxetudant);
+                var nameEtudiant = view.FindViewById<TextView>(Resource.Id.nameStudent);
 
-                view.Tag = new ViewHolder() { CheckBoxEtudiant = checkBoxEtudiant };
+                view.Tag = new ViewHolder()
+                {
+                    CheckBoxEtudiant = checkBoxEtudiant,
+                    nameEtudiant = nameEtudiant
+                };
             }
 
             var holder = (ViewHolder)view.Tag;
+            
 
             holder.CheckBoxEtudiant.Text = etudiants[position].FullName;
-            holder.CheckBoxEtudiant.Enabled = etudiants[position].Absent;
+            //holder.CheckBoxEtudiant.Checked = etudiants[position].Absent;
+           holder. CheckBoxEtudiant.Click += (o, e) => {
+                if (holder.CheckBoxEtudiant.Checked)
+               {
+                   listener.retourner(etudiants[position].Cin);
+               }
+                    
+               
+            };
+
+
 
 
             return view;
 
         }
     }
-}
+    }

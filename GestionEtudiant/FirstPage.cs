@@ -13,11 +13,7 @@ using System.Threading;
 
 namespace GestionEtudiant
 {
-    [Activity(Label = "Gestion Etudiant",
-        MainLauncher = true,
-        Theme = "@style/Theme.Splash",
-        NoHistory = true,
-        Icon = "@drawable/logo_small")]
+    [Activity(Label = "Gestion Etudiant", MainLauncher = true, Theme = "@style/Theme.Splash", NoHistory = true, Icon = "@drawable/logo_small1")]
     public class SplachScreenActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

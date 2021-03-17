@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">XamarinApp</string>
+	<string name="app_name">Gestion d\'absence</string>
 	<string name="loading_image">Loading Image</string>
 	<string name="authentification_avatar">LogiAvatar</string>
 	<string name="username">username</string>
@@ -20,10 +20,12 @@
 	<string name="cancel">Cancel</string>
 	<string name="save">Save</string>
 	<string name="add">Add</string>
-	<string name="name">Name</string>
-	<string name="select_an_lesson">Select an Lesson:</string>
-	<string name="c">c#</string>
-	<string name="select_an_option">Select an option:</string>
-	<string name="option_name">option name</string>
-	<string name="informatique">informatique</string>
+	<string name="Logo">Classroom Logo</string>
+	<string name="search_img">search image</string>
+	<string name="search_nom">Chercher un étudiant : </string>
+	<string name="search_fil">Sélectionner une filière : </string>
+	<string name="search_mat">Sélectionner une matière : </string>
+	<string name="nom">Nom</string>
+	<string name="recherche">Rechercher</string>
+	<string name="annuler">Annuler</string>
 </resources>

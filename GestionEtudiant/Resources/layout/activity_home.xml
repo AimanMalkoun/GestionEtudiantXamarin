@@ -1,132 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="189dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/logout"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="85dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
-        android:contentDescription="@string/logout_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:srcCompat="@drawable/logout_icon" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="189dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/search"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="85dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:contentDescription="@string/search_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:srcCompat="@drawable/loup_icon" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="189dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/new_lesson"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="85dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="@string/new_lesson_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/lesson_icon" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="189dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/add_student"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="85dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="@string/db_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/database_icon" />
+    android:orientation="vertical"
+    android:gravity="center"
+    >
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="143dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="145dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+ 
         android:contentDescription="@string/home_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/home_icon" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="189dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="104dp"
-        android:text="@string/absence"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        
+        android:src="@drawable/home_icon" />
+    <LinearLayout
+        
+       android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/backgroundyellow"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:contextClickable="false"
+            android:textAllCaps="false"
+            android:text="@string/absence"
+            android:id="@+id/absence" 
+         />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="85dp"
         android:layout_height="66dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="24dp"
+       
         android:contentDescription="@string/absence_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/checkbox_icon" />
+      
+        android:src="@drawable/checkbox_icon" />
+    </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+         android:layout_marginTop="5dp">
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/backgroundyellow"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:contextClickable="false"
+            
+            android:textAllCaps="false"
+            android:text="Déconnexion"
+
+       />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="85dp"
+        android:layout_height="66dp"
+        
+        android:contentDescription="@string/logout_icon"
+        
+        android:src="@drawable/logout_icon" />
+         </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+         android:layout_marginTop="5dp">
+        <Button
+            
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/backgroundyellow"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:contextClickable="false"
+            android:textAllCaps="false"
+            android:text="Chercher"
+            android:id="@+id/search"/>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="85dp"
+        android:layout_height="66dp"
+        
+        android:contentDescription="@string/search_icon"
+        
+        android:src="@drawable/loup_icon" />
+         </LinearLayout>
+<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+         android:layout_marginTop="5dp">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/backgroundyellow"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:contextClickable="false"
+            android:textAllCaps="false"
+            android:text="Ajouter étudiant"
+            android:id="@+id/addStudent"
+     />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="85dp"
+        android:layout_height="66dp"
+        
+        android:contentDescription="@string/db_icon"
+        
+        android:src="@drawable/database_icon" />
+        </LinearLayout>
+
+
+
+</LinearLayout>

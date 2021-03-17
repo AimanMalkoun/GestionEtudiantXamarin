@@ -11,9 +11,11 @@ using System.Text;
 
 namespace GestionEtudiant
 {
-    class ViewHolder : Java.Lang.Object
+    interface Interface1
     {
-        public CheckBox CheckBoxEtudiant { get; set; }
-        public TextView nameEtudiant { get;  set; }
+        public void retourner(String IDE);
+       
+
+
     }
 }

@@ -55,7 +55,7 @@ namespace GestionEtudiant
                 Toast.MakeText(this, "Connexion Etablie", ToastLength.Long).Show();
                 login = "";
                 password = "";
-                Intent intent = new Intent(this, typeof(Pagehome));
+                Intent intent = new Intent(this, typeof(HomeActivity));
                 StartActivity(intent);
             }
             else if(!(db.LoginValidate(login, password)))

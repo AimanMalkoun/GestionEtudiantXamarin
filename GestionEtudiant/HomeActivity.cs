@@ -7,7 +7,7 @@ using Android.Content;
 
 namespace GestionEtudiant
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class HomeActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -17,53 +17,47 @@ namespace GestionEtudiant
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_home);
 
-            
-            Button btnAddStudent = FindViewById<Button>(Resource.Id.button3);
+
+            Button btnAddStudent = FindViewById<Button>(Resource.Id.addStudent);
             btnAddStudent.Click += delegate
             {
                 Intent add = new Intent(this, typeof(AddingActivity));
                 StartActivity(add);
             };
 
-            Button btnSearch = FindViewById<Button>(Resource.Id.button4);
-            btnAddStudent.Click += delegate
-            {
-                //Intent add = new Intent(this, typeof(AddStudent));
-                //StartActivity(add);
-            };
+            Button btnSearch = FindViewById<Button>(Resource.Id.search);
+             btnSearch.Click += delegate
+             {
+                 Intent search = new Intent(this, typeof(SearchActivity));
+                 StartActivity(search);
+             };
 
-            Button btnNewLesson = FindViewById<Button>(Resource.Id.button3);
-            btnAddStudent.Click += delegate
-            {
-                //Intent add = new Intent(this, typeof(AddStudent));
-                //StartActivity(add);
-            };
 
-            Button btnAbssence = FindViewById<Button>(Resource.Id.button);
-            btnAddStudent.Click += delegate
-            {
-                Intent add = new Intent(this, typeof(UpdateAbsenceActivity));
-                StartActivity(add);
-            };
+             Button btnAbssence = FindViewById<Button>(Resource.Id.absence);
+             btnAbssence.Click += delegate
+             {
+                 Intent add = new Intent(this, typeof(UpdateAbsenceActivity));
+                 StartActivity(add);
+             };
 
-            Button btnLogout = FindViewById<Button>(Resource.Id.button5);
-            btnAddStudent.Click += delegate
-            {
-                Intent add = new Intent(this, typeof(PageLogin));
-                StartActivity(add);
-            };
+             Button btnLogout = FindViewById<Button>(Resource.Id.logout);
+             btnLogout.Click += delegate
+             {
+                 Intent add = new Intent(this, typeof(PageLogin));
+                 StartActivity(add);
+             };
 
-            
+
         }
 
-        
-    /*
+
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-    */
+
     }
 }

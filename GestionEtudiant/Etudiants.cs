@@ -6,19 +6,18 @@ using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
 namespace GestionEtudiant
 {
-    public class Etudiant
+    public class Etudiants 
     {
-        public string FullName { get; set; }
-        public int Cin { get; set; }
-        public Boolean Absent { get; set; }
-        public int nbAbssence { get; set; }
-        public int nbPresence { get; set; }
-
+        public string FullName;
+        public string Cin { get; set; }
+        public bool Absent { get; set; }
+       
 
         public override string ToString()
         {

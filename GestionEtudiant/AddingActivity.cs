@@ -11,9 +11,15 @@ using System.Text;
 
 namespace GestionEtudiant
 {
-    [Activity(Label = "@string/addStu", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "Ajouter étudiant", Theme = "@style/AppTheme", MainLauncher = false)]
     class AddingActivity: Activity
     {
+        public string nom_filiere;
+        private void spinner1_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
+            nom_filiere = (string)spinner.GetItemAtPosition(e.Position);
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -22,26 +28,32 @@ namespace GestionEtudiant
             SetContentView(Resource.Layout.adding_student);
 
             DataBase sq = new DataBase();            
-
             EditText cin = FindViewById<EditText>(Resource.Id.cin);
             EditText nom = FindViewById<EditText>(Resource.Id.nom);
             EditText prenom = FindViewById<EditText>(Resource.Id.prenon);
             EditText email = FindViewById<EditText>(Resource.Id.email);
             EditText tele = FindViewById<EditText>(Resource.Id.tele);
-            EditText nom_filiere = FindViewById<EditText>(Resource.Id.filiere);
-            
+            var spinner = FindViewById<Spinner>(Resource.Id.spinner);
+
+            List<string> filieres = sq.selectfilieres();//data from db
+            var adapterfil = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleSpinnerItem, filieres);//create adapter
+            adapterfil.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner.Adapter = adapterfil;//set adapter
+            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner1_ItemSelected);
+
+
             Button buttonAdd = FindViewById<Button>(Resource.Id.add);
             buttonAdd.Click += delegate
             {
-                var result = sq.AddStudent(cin.Text, nom.Text, prenom.Text, email.Text, tele.Text, nom_filiere.Text);
-                if (cin.Text == "" || nom.Text == "" || prenom.Text == "" || email.Text == "" || tele.Text == "" || nom_filiere.Text == "")
+                var result = sq.AddStudent(cin.Text, nom.Text, prenom.Text, email.Text, tele.Text, nom_filiere);
+                if (cin.Text == "" || nom.Text == "" || prenom.Text == "" || email.Text == "" || tele.Text == "" || nom_filiere == "")
                 {
                     Toast.MakeText(this, "Remplir les champs vides !", ToastLength.Long).Show();
                 }
-                else if (result == "Cette filière n'existe pas")
+                /*else if (result == "Cette filière n'existe pas")
                 {
                     Toast.MakeText(this, "Cette filière n'existe pas", ToastLength.Long).Show();
-                }
+                }*/
 
                 else if (result == "Ajouté avec succès")
                 {
